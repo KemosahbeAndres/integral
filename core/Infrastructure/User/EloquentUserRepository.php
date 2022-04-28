@@ -3,11 +3,11 @@
 namespace Core\Infrastructure\User;
 
 use App\Models\User;
-use Core\Domain\User\Contracts\UserRepository;
+use Core\Domain\User\Contracts\IUserRepository;
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-class EloquentUserRepository implements UserRepository
+class EloquentUserRepository implements IUserRepository
 {
     private $model;
 

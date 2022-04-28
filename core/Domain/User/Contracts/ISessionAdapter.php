@@ -2,7 +2,7 @@
 
 namespace Core\Domain\User\Contracts;
 
-interface SessionAdapter
+interface ISessionAdapter
 {
     public static function logout(): void;
 }

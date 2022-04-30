@@ -34,7 +34,7 @@
                         <a class="nav-link {{ Route::currentRouteName() == 'page.contact' ? 'active' : '' }}" href="{{ route('page.contact') }}">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-main ms-3" href="https://aula.integraldelnorte.cl/login/">Ingresar</a>
+                        <a class="btn btn-main ms-3" href="https://aula.integraldelnorte.cl/login/" target="_blank">Ingresar</a>
                     </li>
                 </ul>
             </div>

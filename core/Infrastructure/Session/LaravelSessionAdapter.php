@@ -4,8 +4,10 @@ namespace Core\Infrastructure\Session;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Core\Domain\User\Contracts\ISessionAdapter;
 
-final class LaravelSessionAdapter
+final class LaravelSessionAdapter implements ISessionAdapter
 {
     public static function login(Request $request)
     {
@@ -15,7 +17,7 @@ final class LaravelSessionAdapter
         ]);
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
-            return redirect()->intended('dashboard');
+            return true;
         }
         return back()->withErrors([
             'username' => 'The provided credentials do not match our records.',
@@ -27,5 +29,9 @@ final class LaravelSessionAdapter
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/login');
+    }
+    public static function get_logged_user(): array
+    {
+        return User::find(Auth::id());
     }
 }

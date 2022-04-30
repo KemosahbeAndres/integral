@@ -8,6 +8,10 @@ class VisitorEntity extends UserEntity
 {
     public static function fromArray(?array $user): VisitorEntity
     {
-        return parent::fromArray($user);
+        [$id, $name, $username, $rut,
+        $email, $phone, $address] = $user;
+        return new VisitorEntity(
+            $id, $name, $username, $rut, $email, $phone, $address
+        );
     }
 }

@@ -22,18 +22,7 @@ abstract class UserEntity
         $this->phone = $phone;
         $this->address = $address;
     }
-    public static function fromArray(?array $user): UserEntity
-    {
-        return new UserEntity(
-            $user['id'],
-            $user['name'],
-            $user['username'],
-            $user['rut'],
-            $user['email'],
-            $user['phone'],
-            $user['address']
-        );
-    }
+    public abstract static function fromArray(?array $user): UserEntity;
     public function getID(): int
     {
         return $this->id;

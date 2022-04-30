@@ -4,5 +4,5 @@ namespace Core\Domain\User\Contracts;
 
 interface ISessionAdapter
 {
-    public static function logout(): void;
+    public static function get_logged_user(): array;
 }

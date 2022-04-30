@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\AppController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +21,12 @@ Route::view('contacto', 'contact')->name('page.contact');
 Route::view('matricularse', 'enroll')->name('page.enroll');
 Route::post('enroll', [ PageController::class, 'enrollpost' ])->name('page.enroll.post');
 Route::post('message', [ PageController::class, 'contactpost' ])->name('page.contact.post');
-Route::view('iniciarsesion', 'login')->name('page.login');
+// Route::view('iniciarsesion', 'login')->name('page.login');
 
-Route::get('cerrarsesion', 'SessionController@logout')->name('session.logout');
+// Route::get('cerrarsesion', 'SessionController@logout')->name('session.logout');
 // Route::get('registrarse', 'SessionController@registerform')->name('session.register');
 // Route::get('recuperar', 'SessionController@forgotform')->name('session.form');
+// Route::post('login', 'SessionController@login')->name('session.login');
 
-Route::post('login', 'SessionController@login')->name('session.login');
+// Plataforma Virtual
+// Route::get('/aula', [AppController::class, 'home'])->name('app.home')->middleware('auth');

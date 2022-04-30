@@ -30,3 +30,6 @@ Route::post('message', [ PageController::class, 'contactpost' ])->name('page.con
 
 // Plataforma Virtual
 // Route::get('/aula', [AppController::class, 'home'])->name('app.home')->middleware('auth');
+Route::get('plataforma', function () {
+    return redirect()->away('https://aula.integraldelnorte.cl/login/');
+});
